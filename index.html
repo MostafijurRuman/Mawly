@@ -68,7 +68,7 @@
 
     </header>
 
-    <main>
+    <main class="w-11/12 md:w-10/12 mx-auto">
         <!-- Adopt  .. Friend Section Start  -->
             <h1 class="text-[40px] font-black text-center">Adopt  Your  Best Friend</h1>
             <p class="text-[16px] font-normal text-[#131313]  text-center"> Adopting a pet is a rewarding experience that brings joy and companionship. <br> Find your perfect match and give a loving home to a pet in need.</p>
@@ -81,10 +81,31 @@
          </div>
         <!-- Pet Buttons Via API End -->
 
+        <!-- best deal for you section start -->
+         <div class="flex  justify-between items-center mb-8">
+            <h1 class="font-black text-[24px]">Best Deal For you</h1>
+            <button class="btn bg-most text-white font-bold text-xl px-8 py-4 rounded-xl">Sort by Price</button>
+         </div>
+        <!-- best deal for you section end -->
+
+        <!-- Card  container start -->
+            <div class="flex gap-x-6">
+                    <!-- main card container-->
+                    <div class=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-" id="main-card-container">
+
+                    </div>
+                       
+                    <!-- img card container -->
+                    <div id="likedPetsContainer" class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-6 h-fit w-fit rounded-[12px] border border-[rgba(19,19,19,0.10)] p-5">
+
+                    </div>
+            </div>
+        <!-- Card  container end -->
+
     </main>
 
     <footer>
-
+       
     </footer>
 
 <script src="./script.js"></script>
