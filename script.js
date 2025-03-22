@@ -32,53 +32,51 @@ const displayPetBtn = (pets) =>{
 }
 
 // Display all pets as card *
-const displayPets = (pets) =>{
+const displayPets = (pets) => {
     const mainCardContainer = document.getElementById("main-card-container");
     pets.forEach(pet => {
         const petCard = document.createElement("div");
         petCard.innerHTML = `
-          <div class="card bg-base-100 w-96 shadow-sm mb-5">
-                    <figure class="px-5 pt-5">
-                      <img class="w-[373px] h-[230px] rounded-lg"
+            <div class="bg-white w-full max-w-sm rounded-lg shadow-sm mb-5 overflow-hidden">
+                <figure class="px-5 pt-5">
+                    <img
+                    class="w-full h-56 object-cover rounded-lg"
                     src="${pet.image}"
-                    alt="Shoes"
-                    class="rounded-xl" />
-                    </figure>
-                    <div class="card-body ">
-                      <h2 class="font-bold text-[20px]">${pet.pet_name}</h2>
-                      <div class="flex gap-x-1">
-                    <img src="./assets/breedi.svg" alt="">
-                    <h1>Breed:  ${pet.breed}</h1>
-                      </div>
-                      <div class="flex gap-x-1">
-                    <img src="./assets/birth.svg" alt="">
-                    <h1>Birth: ${pet.date_of_birth}</h1>
-                      </div>
-                      <div class="flex gap-x-1">
-                    <img src="./assets/gender.svg" alt="">
-                    <h1>Gender: ${pet.gender}</h1>
-                      </div>
-                      <div class="flex gap-x-1">
-                    <img src="./assets/price.svg" alt="">
-                    <h1>Price :${pet.price}$</h1>
-                      </div>
-                      <hr class="text-[#1313131A]">
-                      <div class="flex justify-between gap-x-7">
+                    alt="${pet.pet_name}"
+                    />
+                </figure>
+                <div class="p-5">
+                    <h2 class="font-bold text-xl mb-2">${pet.pet_name}</h2>
+                    <div class="flex items-center gap-2 mb-2">
+                    <img src="./assets/breedi.svg" alt="Breed Icon" class="w-5 h-5">
+                    <p class="text-gray-700">Breed: ${pet.breed}</p>
+                    </div>
+                    <div class="flex items-center gap-2 mb-2">
+                    <img src="./assets/birth.svg" alt="Birth Icon" class="w-5 h-5">
+                    <p class="text-gray-700">Birth: ${pet.date_of_birth}</p>
+                    </div>
+                    <div class="flex items-center gap-2 mb-2">
+                    <img src="./assets/gender.svg" alt="Gender Icon" class="w-5 h-5">
+                    <p class="text-gray-700">Gender: ${pet.gender}</p>
+                    </div>
+                    <div class="flex items-center gap-2 mb-4">
+                    <img src="./assets/price.svg" alt="Price Icon" class="w-5 h-5">
+                    <p class="text-gray-700">Price: ${pet.price}$</p>
+                    </div>
+                    <hr class="border-gray-200 mb-4">
+                    <div class="flex justify-between gap-2">
                     <button class="btn like-btn px-3 text-most rounded-lg text-[18px] font-bold"><img src="./assets/likeiIcon.svg" alt=""></button>
                     <button class="btn adopt-btn px-3 text-most rounded-lg text-[18px] font-bold">Adopt</button>
                     <button class="btn details-btn px-3 text-most rounded-lg text-[18px] font-bold">Details</button>
-                      </div>
                     </div>
-                  </div>
                 </div>
+            </div>
         `;
-        mainCardContainer.appendChild(petCard)
-        
+        mainCardContainer.appendChild(petCard);
+
         // Button functions
         petCard.querySelector('.like-btn').addEventListener('click', () => {
             liked(pet.image);
-
-
         });
 
         petCard.querySelector('.adopt-btn').addEventListener('click', () => {
@@ -88,21 +86,19 @@ const displayPets = (pets) =>{
         petCard.querySelector('.details-btn').addEventListener('click', () => {
             console.log(`Details for ${pet.pet_name}`);
         });
-        
     });
 }
 
 // Like Function  *
- const liked = (img) =>{
+const liked = (img) => {
     const likedPetsContainer = document.getElementById('likedPetsContainer');
     const likedPet = document.createElement("div");
-    likedPet.innerHTML=`
+    likedPet.innerHTML = `
       <img class="w-[124px] h-[124px] rounded-lg" src="${img}" alt="pet Image">
-    `
-    likedPetsContainer.appendChild(likedPet)
- }
-
+    `;
+    likedPetsContainer.appendChild(likedPet);
+}
 
 // Function Calls ###
-petCategories()
-allPets ()
+petCategories();
+allPets();
