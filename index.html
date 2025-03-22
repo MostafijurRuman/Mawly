@@ -23,13 +23,63 @@
      </style>
 </head>
 <body class="font-loto">
-    <header>
+    <header class="w-11/12 md:w-10/12 mx-auto">
         <nav>
-                
+            <div class="navbar mt-5 ">
+                <div class="navbar-start">
+                  <div class="dropdown">
+                    <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
+                    </div>
+                    <ul
+                      tabindex="0"
+                      class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow ">
+                      <li><a>Home</a></li>
+                      <li><a>shop</a></li>
+                      <li><a>Contact</a></li>
+                    </ul>
+                  </div>
+                  <a class="btn btn-ghost text-2xl font-black "><img src="./assets/logo.webp" alt="">Mawly</a>
+                </div>
+                <div class="navbar-center hidden lg:flex">
+                  <ul class="menu menu-horizontal px-1">
+                    <li><a>Home</a></li>
+                    <li><a>shop</a></li>
+                    <li><a>Contact</a></li>
+                  </ul>
+                </div>
+                <div class="navbar-end">
+                  <img class="shadow-sm bg-slate-100 rounded-full p-1" src="./assets/Frame.svg" alt="">
+                </div>
+              </div> 
         </nav>
+        <!-- Hero Section Start -->
+         <div class="flex flex-col  items-center gap-y-6 mt-10">
+            <h3 class="text-[24px] font-bold text-text">Bringing Families Together ❤️‍🔥</h3>
+            <h1 class="text-5xl md:text-7xl font-black text-center "> Your Path to Adoption <br> Starts Here</h1>
+            <p class="text-[16px] font-normal text-[#131313] max-w-[752px] text-center"> 
+                 Pet adoption is a wonderful way to bring a new furry friend into your home. By adopting, you are giving a pet a second chance at life and providing them with a loving family.
+            </p>
+            <button class="btn bg-most text-white text-[20px] font-bold rounded-xl px-8 py-4">ViewMore</button>
+            <img src="./assets/pet.webp" alt="">
+         </div>
+
+        <!-- Hero Section End -->
+
     </header>
 
     <main>
+        <!-- Adopt  .. Friend Section Start  -->
+            <h1 class="text-[40px] font-black text-center">Adopt  Your  Best Friend</h1>
+            <p class="text-[16px] font-normal text-[#131313]  text-center"> Adopting a pet is a rewarding experience that brings joy and companionship. <br> Find your perfect match and give a loving home to a pet in need.</p>
+        <!-- Adopt  .. Friend Section End  -->
+
+        <!-- Pet Buttons Via API Start -->
+         <div id="pet-btn" class="flex justify-center gap-6 mt-12 mb-8">
+            <!-- <button class="btn  btn-wide font-bold text-2xl text-[#131313] p-6 py-8 bg-white ro"> <img class="w-8 h-8" src="./assets/cat 1.svg" alt="">Cat</button> -->
+            <!-- <button class="btn  btn-wide font-bold text-2xl text-[#131313] p-6 py-8 rounded-3xl border border-[#0E7A81] bg-[#0E7A811A]"> <img class="w-8 h-8" src="./assets/cat 1.svg" alt="">Rabbit</button> -->
+         </div>
+        <!-- Pet Buttons Via API End -->
 
     </main>
 
