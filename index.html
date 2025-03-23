@@ -24,6 +24,8 @@
 </head>
 <body class="font-loto">
     <header class="w-11/12 md:w-10/12 mx-auto">
+      
+      
         <nav>
             <div class="navbar mt-5 ">
                 <div class="navbar-start">
@@ -60,7 +62,7 @@
             <p class="text-[16px] font-normal text-[#131313] max-w-[752px] text-center"> 
                  Pet adoption is a wonderful way to bring a new furry friend into your home. By adopting, you are giving a pet a second chance at life and providing them with a loving family.
             </p>
-            <button class="btn bg-most text-white text-[20px] font-bold rounded-xl px-8 py-4">ViewMore</button>
+            <button class="btn bg-most text-white text-[20px] font-bold rounded-xl px-8 py-4"><a href="#pet-btn">View More</a></button>
             <img src="./assets/pet.webp" alt="">
          </div>
 
@@ -85,7 +87,7 @@
         <!-- best deal for you section start -->
          <div class="flex  justify-between items-center mb-8">
             <h1 class="font-black text-[20px] md:text-[24px]">Best Deal For you</h1>
-            <button class="btn bg-most text-white font-bold text-[16px] md:text-xl px-8 py-4 rounded-xl">Sort by Price</button>
+            <button id="sortByPrice" class="btn bg-most text-white font-bold text-[16px] md:text-xl px-8 py-4 rounded-xl">Sort by Price</button>
          </div>
         <!-- best deal for you section end -->
 
@@ -94,12 +96,12 @@
             <div class="flex gap-x-6 flex-col-reverse md:flex-row">
                     <!-- main card container-->
                     <div class=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-" id="main-card-container">
-
+                      
                     </div>
                        
                     <!-- img card container -->
                     
-                    <div id="likedPetsContainer" class="hidden grid grid-cols-3 md:grid-cols-2 gap-x-6 gap-y-6 h-fit w-fit rounded-[12px] border border-[rgba(19,19,19,0.10)] p-5">
+                    <div id="likedPetsContainer" class="hidden grid grid-cols-3 md:grid-cols-2 gap-x-6 gap-y-6 h-fit w-fit rounded-[12px] border border-[rgba(19,19,19,0.10)] shadow-sm p-5 mb-8">
                       
                     </div>
             </div>
