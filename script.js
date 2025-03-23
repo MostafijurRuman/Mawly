@@ -25,7 +25,7 @@ const displayPetBtn = (pets) =>{
     pets.forEach(pet => {
         const petBtn = document.createElement("div");
         petBtn.innerHTML = `
-          <button id="btn${pet.id}" class="btn  btn-wide font-bold text-2xl text-[#131313] px-12 py-8 bg-white ro"> <img class="w-8 h-8" src="${pet.category_icon}" alt="">${pet.category}</button>
+          <button id="btn${pet.id}" class="btn  btn-wide font-bold text-xl md:text-2xl text-[#131313] px-8 md:px-12 py-8 bg-white ro"> <img class="w-8 h-8" src="${pet.category_icon}" alt="">${pet.category}</button>
         `
         petBtnContiner.appendChild(petBtn)
     });
@@ -96,6 +96,8 @@ const liked = (img) => {
     likedPet.innerHTML = `
       <img class="w-[124px] h-[124px] rounded-lg" src="${img}" alt="pet Image">
     `;
+    likedPetsContainer.classList.remove("hidden")
+    document.getElementById('liked-pet-head').classList.remove("hidden")
     likedPetsContainer.appendChild(likedPet);
 }
 

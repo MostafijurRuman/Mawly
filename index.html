@@ -75,10 +75,11 @@
         <!-- Adopt  .. Friend Section End  -->
 
         <!-- Pet Buttons Via API Start -->
-         <div id="pet-btn" class="flex justify-center gap-6 mt-12 mb-8">
-            <!-- <button class="btn  btn-wide font-bold text-2xl text-[#131313] p-6 py-8 bg-white ro"> <img class="w-8 h-8" src="./assets/cat 1.svg" alt="">Cat</button> -->
-            <!-- <button class="btn  btn-wide font-bold text-2xl text-[#131313] p-6 py-8 rounded-3xl border border-[#0E7A81] bg-[#0E7A811A]"> <img class="w-8 h-8" src="./assets/cat 1.svg" alt="">Rabbit</button> -->
-         </div>
+         <div id="pet-btn" class="grid grid-cols-2 md:grid-cols-4  gap-6 mt-12 mb-8">
+          <!-- <button class="btn  btn-wide font-bold text-2xl text-[#131313] p-6 py-8 bg-white ro"> <img class="w-8 h-8" src="./assets/cat 1.svg" alt="">Cat</button> -->
+          <!-- <button class="btn  btn-wide font-bold text-2xl text-[#131313] p-6 py-8 rounded-3xl border border-[#0E7A81] bg-[#0E7A811A]"> <img class="w-8 h-8" src="./assets/cat 1.svg" alt="">Rabbit</button> -->
+          <!-- <button id="btn${pet.id}" class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-x font-bold text-2xl text-[#131313]  bg-white ro"> <img class="w-8 h-8" src="${pet.category_icon}" alt="">${pet.category}</button> -->
+          </div>
         <!-- Pet Buttons Via API End -->
 
         <!-- best deal for you section start -->
@@ -89,6 +90,7 @@
         <!-- best deal for you section end -->
 
         <!-- Card  container start -->
+        <h2 id="liked-pet-head" class="block md:hidden text-[24px] font-bold mb-4 text-center ">Liked Pets</h2>
             <div class="flex gap-x-6 flex-col-reverse md:flex-row">
                     <!-- main card container-->
                     <div class=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-" id="main-card-container">
@@ -96,13 +98,16 @@
                     </div>
                        
                     <!-- img card container -->
-                    <div id="likedPetsContainer" class="grid grid-cols-3 md:grid-cols-2 gap-x-6 gap-y-6 h-fit w-fit rounded-[12px] border border-[rgba(19,19,19,0.10)] p-5">
-
+                    
+                    <div id="likedPetsContainer" class="hidden grid grid-cols-3 md:grid-cols-2 gap-x-6 gap-y-6 h-fit w-fit rounded-[12px] border border-[rgba(19,19,19,0.10)] p-5">
+                      
                     </div>
             </div>
         <!-- Card  container end -->
 
     </main>
+
+    
 
     <footer>
        
