@@ -67,9 +67,10 @@ const displayPets = (pets) => {
             </figure>
             <div class="p-5">
             <h2 class="font-bold text-xl mb-2">${pet.pet_name ? pet.pet_name : 'Not available'}</h2>
+            <div>
             <div class="flex items-center gap-2 mb-2">
             <img src="./assets/breedi.svg" alt="Breed Icon" class="w-5 h-5">
-            <p class="text-gray-700">Breed:  ${pet.breed ? pet.breed : 'Not available'}</p>
+            <p class="text-gray-700">Breed: ${pet.breed ? pet.breed : 'Not available'}</p>
             </div>
             <div class="flex items-center gap-2 mb-2">
             <img src="./assets/birth.svg" alt="Birth Icon" class="w-5 h-5">
@@ -83,11 +84,14 @@ const displayPets = (pets) => {
             <img src="./assets/price.svg" alt="Price Icon" class="w-5 h-5">
             <p class="text-gray-700">Price: ${pet.price ? pet.price + '$' : 'Not available'}</p>
             </div>
+            </div>
             <hr class="border-gray-200 mb-4">
             <div class="flex justify-between gap-2">
             <button class="btn like-btn px-3 text-most rounded-lg text-[18px] font-bold"><img src="./assets/likeiIcon.svg" alt=""></button>
             <button class="btn adopt-btn px-3 text-most rounded-lg text-[18px] font-bold">Adopt</button>
-            <button class="btn details-btn px-3 text-most rounded-lg text-[18px] font-bold">Details</button>
+            <button class="btn details-btn flex-1 text-most font-bold  px-3 rounded-lg  text-[18px]  hover:bg-most hover:text-white transition-colors" data-pet-id="${pet.id}">
+                        Details
+                    </button>
             </div>
             </div>
             </div>
@@ -104,9 +108,57 @@ const displayPets = (pets) => {
         });
 
         petCard.querySelector('.details-btn').addEventListener('click', () => {
-            console.log(`Details for ${pet.pet_name}`);
+            showModal(pet);
         });
     });
+}
+
+// Function to show modal
+const showModal = (pet) => {
+    const modal = document.createElement("dialog");
+    modal.id = `modal_${pet.id}`;
+    modal.classList.add("modal");
+    modal.innerHTML = `
+        <div class="modal-box">
+            <figure class=" ">
+                <img
+                class="w-full h-56 object-cover rounded-lg"
+                src="${pet.image ? pet.image : 'Not available'}"
+                alt="${pet.pet_name ? pet.pet_name : 'Not available'}"
+                />
+            </figure>
+            <h3 class="text-lg font-bold mt-4">${pet.pet_name}</h3>
+            <div class="grid grid-cols-2 gap-4">
+                <div>
+                    <div class="flex items-center gap-2 mb-2">
+                        <img src="./assets/breedi.svg" alt="Breed Icon" class="w-5 h-5">
+                        <p class="text-gray-700">Breed: ${pet.breed ? pet.breed : 'Not available'}</p>
+                    </div>
+                    <div class="flex items-center gap-2 mb-2">
+                        <img src="./assets/birth.svg" alt="Birth Icon" class="w-5 h-5">
+                        <p class="text-gray-700">Birth: ${pet.date_of_birth ? pet.date_of_birth : 'Not available'}</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="flex items-center gap-2 mb-2">
+                        <img src="./assets/gender.svg" alt="Gender Icon" class="w-5 h-5">
+                        <p class="text-gray-700">Gender: ${pet.gender ? pet.gender : 'Not available'}</p>
+                    </div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <img src="./assets/price.svg" alt="Price Icon" class="w-5 h-5">
+                        <p class="text-gray-700">Price: ${pet.price ? pet.price + '$' : 'Not available'}</p>
+                    </div>
+                </div>
+            </div>
+            <hr class="border-gray-200 mb-4">
+            <p class="py-4">Description: ${pet.pet_details ? pet.pet_details : 'No description available'}</p>
+            <div class="modal-action">
+                <button class="btn w-full text-center text-most bg-[#0E7A8133] rounded-lg  border-[#0E7A811A]" onclick="this.closest('dialog').close()">Cancel</button>
+            </div>
+        </div>
+    `;
+    document.body.appendChild(modal);
+    modal.showModal();
 }
 
 // Like Function  *
