@@ -104,14 +104,34 @@ const displayPets = (pets) => {
         });
 
         petCard.querySelector('.adopt-btn').addEventListener('click', () => {
-            console.log(`Adopted ${pet.pet_name}`);
+            const modal = document.getElementById('my_modal_5');
+            modal.showModal();
+
+            // Countdowner
+            const countdownElement = document.getElementById('countdown');
+            let countdown = 3;
+
+            const countdownInterval = setInterval(() => {
+            countdownElement.textContent = countdown;
+            countdown--;
+
+            if (countdown < 0) {
+                clearInterval(countdownInterval);
+                countdownElement.textContent = '0';
+                modal.close();
+                const adoptBtn = petCard.querySelector('.adopt-btn');
+                adoptBtn.disabled = true;
+                adoptBtn.textContent = 'Adopted';
+                adoptBtn.classList.add("text-text")
+            }
+            }, 1000);
         });
 
         petCard.querySelector('.details-btn').addEventListener('click', () => {
             showModal(pet);
         });
-    });
-}
+        });
+    }
 
 // Function to show modal
 const showModal = (pet) => {
@@ -233,6 +253,11 @@ buttons.forEach(button => {
         button.classList.add('rounded-3xl', 'border', 'border-[#0E7A81]', 'bg-[#0E7A811A]');
     });
 });
+
+
+        
+        
+        
 
 
 
