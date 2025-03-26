@@ -88,7 +88,7 @@ const displayPets = (pets) => {
             <hr class="border-gray-200 mb-4">
             <div class="flex justify-between gap-2">
             <button class="btn like-btn px-3 text-most rounded-lg text-[18px] font-bold"><img src="./assets/likeiIcon.svg" alt=""></button>
-            <button class="btn adopt-btn px-3 text-most rounded-lg text-[18px] font-bold">Adopt</button>
+            <button class="btn adopt-btn px-3 text-most rounded-lg text-[18px] font-bold hover:bg-most hover:text-white transition-colors">Adopt</button>
             <button class="btn details-btn flex-1 text-most font-bold  px-3 rounded-lg  text-[18px]  hover:bg-most hover:text-white transition-colors" data-pet-id="${pet.id}">
                         Details
                     </button>
@@ -210,6 +210,9 @@ const sortPetsByPrice = async () => {
 
 // Event listener for sort by price button
 document.getElementById('sortByPrice').addEventListener('click', sortPetsByPrice);
+
+// Function to sort pets by price by Category
+
 
 
 // fetch by category *
